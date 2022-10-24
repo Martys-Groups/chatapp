@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+body {
+    background: #f1f1f1;
+}
+
+main{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    width: 80%;
+    border-radius:10px ;
+}
+header{
+    background: #2791cf;
+    width: 100%;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .title img{
+    width: 80px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+   
+   
+}
+header .title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+header .title h1{
+font-size: 1.5rem;
+color:#fff;
+}
+header button{
+    background: none;
+    border: none;
+    outline: none;
+    display: none;
+}
+header button img{
+    width: 25px;
+
+}
+.container {
+    display: flex;
+    justify-content: stretch;
+    position: relative;
+    /* height: 90vh; */
+    width: 100%;
+    margin: auto;
+    background: #fff;
+    overflow: auto;
+    padding: 33px;
+    /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1),
+        0px 0px 10px rgba(0, 0, 0, 0.1),
+        0px 0px 20px rgba(0, 0, 0, 0.1),
+        0px 0px 20px rgba(0, 0, 0, 0.1),
+        0px 0px 10px rgba(0, 0, 0, 0.1),
+        0px 0px 10px rgba(0, 0, 0, 0.1); */
+}
+
+
+.user-window{
+    background: #3f3f3f;
+    width: 350px;
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 0 2rem ;
+}
+
+.user-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+}
+.user-head h4{
+    background: #999;
+    border-radius: 50%;
+    padding: 3px 10px;
+}
+
+.user-head button{
+    background: #999;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+   display: none;
+
+}
+.user-head button img{
+    width: 25px;
+    object-fit: cover;
+}
+.users-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+.users-list p{
+    background: #555;
+    margin: 0.3rem 0;
+}
+
+.chat-window{
+    width: 100%;
+    background: #3f3f3f;
+    border-radius: 10px;
+}
+.chats{
+   height: 65vh;
+   padding: 20px;
+   overflow: auto;
+}
+
+.user-joined {
+    width: max-content;
+    background: #fff;
+    margin: 2rem auto;
+    padding: 7px 20px;
+    border-radius: 20px;
+    text-align: center;
+    clear: both;
+    -webkit-box-shadow: 0px 0px 23px 11px rgba(0,0,0,0.09);
+    -moz-box-shadow: 0px 0px 23px 11px rgba(0,0,0,0.09);
+    box-shadow: 0px 0px 23px 11px rgba(0,0,0,0.09);
+    
+}
+
+.message {
+    min-width: 30%;
+    width: 30%;
+    background: #ccc;
+    padding: 10px;
+    margin: 20px 5px;
+    border: none;
+    border-radius: 10px;
+    color: #555;
+    margin-bottom: 3rem;
+    overflow-x: auto;
+
+}
+
+.left {
+    float: right;
+    clear: both;
+    background: rgb(219, 122, 219);
+    color: #fff;
+}
+
+.right {
+    float: left;
+    clear: both;
+
+}
+
+#send-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+padding: 20px;
+}
+
+#messageInp {
+    min-width: 80%;
+    height: 34px;
+    background: #ccc;
+    outline: none;
+    border: none;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    padding: 1rem;
+
+}
+
+.btn {
+    cursor: pointer;
+    padding: 0.3rem 2rem;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    outline: none;
+    border: none;
+    border-left: 1px solid #999;
+    background: #ccc;
+}
+
+@media screen and (max-width:900px) {
+    main{
+        width: 95%;
+    }
+    header button{
+        display: block;
+    }
+    .container{
+        position: relative;
+        padding: 0 33px;
+        border-radius: 0 0 10px 10px;
+        
+    }
+    
+    .user-window{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: max-content;
+        z-index: 11;
+        box-shadow: 0 15px 20px -20px black;
+        border-radius: 0 0 10px 10px;
+        display: none;
+        margin: auto;
+    }
+    .message{
+        width: 40%;
+        min-width: 50%;
+        
+    }
+    .active{
+        display: block;
+        transition:all 0.2s ease-in-out;
+    }
+    .user-head button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:480px){
+    main {
+        width: 100%;
+        border-radius: 0;
+    }
+    
+    .container{
+        height: 86.7vh;
+        padding: 0;
+        border-radius: 0;
+    }
+    
+
+.chat-window{
+    border-radius: 0;
+}
+#send-container{
+    position: absolute;
+    bottom: 0;
+    justify-content: stretch;
+    align-items: stretch;
+}
+#messageInp{
+    min-width: 90%;
+}
+}

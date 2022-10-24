@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <!-- this is the head section of the messaging and user window  -->
+        <header>
+            <div class="title">
+                <img src="icons/logo.png" alt="">
+                <h1>Marty</h1>
+            </div>
+
+            <button id="ham"><img src="icons/hamberger.svg" alt=""></button>
+        </header>
+
+        <!-- This is the container for uset and chat window  -->
+        <div class="container">
+            <div class="user-window">
+                <div class="user-head">
+                    <h3>People</h3>
+                    <h4 class="users-count">3</h4>
+                    <button id="cross"><img src="icons/cross.png" alt=""></button>
+                </div>
+                <div class="users-list">
+                    <p>mritunjay</p>
+                    <p>marty</p>
+                </div>
+            </div>
+            <div class="chat-window">
+
+                <div class="chats">
+                    <div class="user-joined">
+                        <p><b>marty</b> joined the chat</p>
+                    </div>
+
+                    <!-- message template================================ -->
+                    <!-- <template> -->
+                    <div class="message right">
+                        <h5>Marty</h5>
+                        <p>hey</p>
+
+                    </div>
+                    <div class="message left">
+                        <h5>Marty</h5>
+                        <p>hey</p>
+                    </div>
+                    <!-- </template> -->
+                </div>
+
+                <div class="send">
+                    <form action="#" id="send-container">
+                        <input type="text" placeholder="Send a Message" name="messageInp" id="messageInp">
+                        <button class="btn" type="button" id="msg-send">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/client.js"></script>
+
+    <script>
+        let hamberger = document.getElementById('ham');
+        let userWin = document.querySelector('.user-window');
+        hamberger.addEventListener('click', () => {
+            userWin.classList.add('active')
+        })
+
+        let cross = document.getElementById('cross');
+
+        cross.addEventListener('click', ()=>{
+            userWin.classList.remove('active');
+        })
+    </script>
+</body>
+
+</html>
